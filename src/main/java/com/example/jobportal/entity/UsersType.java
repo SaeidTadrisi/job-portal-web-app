@@ -1,4 +1,4 @@
-package com.example.jobportal.controller.entity;
+package com.example.jobportal.entity;
 
 import jakarta.persistence.*;
 
@@ -9,12 +9,12 @@ import java.util.List;
 public class UsersType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userTypeId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int userTypeId;
 
     private String userTypeName;
 
-    @OneToMany(targetEntity = Users.class, mappedBy = "usersTypeId", cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Users.class, mappedBy = "userTypeId", cascade = CascadeType.ALL)
     private List<Users> users;
 
     public UsersType() {
@@ -49,7 +49,6 @@ public class UsersType {
     public void setUsers(List<Users> users) {
         this.users = users;
     }
-
 
     @Override
     public String toString() {
