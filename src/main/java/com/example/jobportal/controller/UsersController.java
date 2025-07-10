@@ -2,7 +2,6 @@ package com.example.jobportal.controller;
 
 import com.example.jobportal.entity.Users;
 import com.example.jobportal.entity.UsersType;
-import com.example.jobportal.repository.UsersRepository;
 import com.example.jobportal.services.UserTypesService;
 import com.example.jobportal.services.UsersService;
 import jakarta.validation.Valid;
@@ -20,6 +19,7 @@ public class UsersController {
 
     private final UserTypesService userTypesService;
     private final UsersService usersService;
+
     @Autowired
     public UsersController(UserTypesService userTypesService, UsersService usersService) {
         this.userTypesService = userTypesService;

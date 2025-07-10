@@ -10,11 +10,11 @@ public class UsersType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int userTypeId;
+    private int userTypeId;
 
     private String userTypeName;
 
-    @OneToMany(targetEntity = Users.class, mappedBy = "userTypeId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userType", cascade = CascadeType.ALL)
     private List<Users> users;
 
     public UsersType() {
