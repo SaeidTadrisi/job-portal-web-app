@@ -2,8 +2,6 @@ package com.example.jobportal.entity;
 
 import jakarta.persistence.*;
 
-import java.security.PrivateKey;
-
 @Entity
 @Table(name = "skills")
 public class Skills {
