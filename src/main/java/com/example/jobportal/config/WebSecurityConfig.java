@@ -30,7 +30,7 @@ public class WebSecurityConfig {
             "/fonts**",
             "/favicon.ico",
             "/resources/**",
-                "/error"};
+            "/error"};
 
     public WebSecurityConfig(CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler) {
         this.customAuthenticationSuccessHandler = customAuthenticationSuccessHandler;
