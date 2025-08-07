@@ -44,12 +44,24 @@
                         </h1>
                     </div>
                     <div class="myForm">
+
                         <form
                                 th:action="@{/register/new}"
                                 th:object="${user}"
                                 method="post"
                         >
                             <div class="box-body bozero mx2p">
+                                <!-- Error message display -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div th:if="${error}" class="alert alert-danger" role="alert">
+                                                <p th:text="${error}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End error message display -->
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -87,10 +99,10 @@
                                                 class="form-control"
                                                 th:field="*{userTypeId}"
                                         >
-                                            <th:block th:each="userType :${getAllTypes}">
+                                            <th:block th:each="userTypeId :${getAllTypes}">
                                                 <option
-                                                        th:text="${userType.userTypeName}"
-                                                        th:value="${userType.userTypeId}"
+                                                        th:text="${userTypeId.userTypeName}"
+                                                        th:value="${userTypeId.userTypeId}"
                                                 ></option>
                                             </th:block>
                                         </select>
