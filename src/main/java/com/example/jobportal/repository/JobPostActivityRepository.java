@@ -2,7 +2,6 @@ package com.example.jobportal.repository;
 
 import com.example.jobportal.entity.JobPostActivity;
 import com.example.jobportal.entity.RecruiterJobProjection;
-import com.example.jobportal.entity.RecruiterProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
