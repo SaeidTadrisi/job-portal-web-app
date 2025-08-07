@@ -97,12 +97,12 @@
                                         <select
                                                 required
                                                 class="form-control"
-                                                th:field="*{userType}"
+                                                th:field="*{userTypeId}"
                                         >
-                                            <th:block th:each="userType :${getAllTypes}">
+                                            <th:block th:each="userTypeId :${getAllTypes}">
                                                 <option
-                                                        th:text="${userType.userTypeName}"
-                                                        th:value="${userType.userTypeId}"
+                                                        th:text="${userTypeId.userTypeName}"
+                                                        th:value="${userTypeId.userTypeId}"
                                                 ></option>
                                             </th:block>
                                         </select>

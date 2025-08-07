@@ -14,7 +14,7 @@ public class UsersType {
 
     private String userTypeName;
 
-    @OneToMany(mappedBy = "userType", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userTypeId", cascade = CascadeType.ALL)
     private List<Users> users;
 
     public UsersType() {
