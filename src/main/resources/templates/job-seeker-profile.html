@@ -157,7 +157,7 @@
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <input
-                                                type="text"
+                                                type="number"
                                                 th:field="*{skills[__${iterStat.index}__].id}"
                                                 hidden
                                         />
@@ -292,7 +292,7 @@
         var newRow = jQuery("<div id='skill-repeat'><div class='row'>"+
                    "    <div class='col-md-4 pr-1'>"+
                    "     <input"+
-                   "        hidden type='text'"+
+                   "        hidden type='number'"+
                    "        class='form-control' "+
                    "        name='skills["+counter+"].Id'"+
                    "      />"+
