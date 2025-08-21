@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface JobSeekerApplyRepository extends JpaRepository<JobSeekerApply, Integer> {
 
-    List<JobSeekerApply> findByUserId(JobSeekerProfile jobSeekerProfile);
+    List<JobSeekerApply> findByJobSeekerProfile(JobSeekerProfile jobSeekerProfile);
 
-    List<JobSeekerApply> findByJob(JobPostActivity jobPostActivity);
+    List<JobSeekerApply> findByJobPostActivity(JobPostActivity jobPostActivity);
 }
