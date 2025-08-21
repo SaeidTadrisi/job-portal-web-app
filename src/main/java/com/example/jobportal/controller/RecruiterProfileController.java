@@ -41,8 +41,7 @@ public class RecruiterProfileController {
 
         if (!(authentication instanceof AnonymousAuthenticationToken)){
             String currentUserName = authentication.getName();
-            Users user = usersService.getUserByEmail(currentUserName).orElseThrow(() ->
-                    new UsernameNotFoundException("User not found!"));
+            Users user = usersService.getUserByEmail(currentUserName);
             Optional<RecruiterProfile> recruiterProfile = recruiterProfileService.getRecruiterProfile(user.getUserId());
 
             if (recruiterProfile.isPresent()){
@@ -61,8 +60,7 @@ public class RecruiterProfileController {
             return "redirect:/login";
         }
         String currentUserName = authentication.getName();
-        Users currentUser = usersService.getUserByEmail(currentUserName).orElseThrow(() ->
-                new UsernameNotFoundException("User not found!"));
+        Users currentUser = usersService.getUserByEmail(currentUserName);
         recruiterProfile.setUser(currentUser);
         recruiterProfile.setUserAccountId(currentUser.getUserId());
 
