@@ -20,7 +20,7 @@ public class JobSeekerSave implements Serializable {
     private JobSeekerProfile jobSeekerProfile;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "job", referencedColumnName = "jobPostId")
+    @JoinColumn(name = "job", referencedColumnName = "job_post_id")
     private JobPostActivity jobPostActivity;
 
     public JobSeekerSave() {
