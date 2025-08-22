@@ -15,12 +15,12 @@ public class JobSeekerSave implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "user_id", referencedColumnName = "user_account_id")
     private JobSeekerProfile jobSeekerProfile;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "job", referencedColumnName = "job_post_id")
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "job", referencedColumnName = "jobPostId")
     private JobPostActivity jobPostActivity;
 
     public JobSeekerSave() {
