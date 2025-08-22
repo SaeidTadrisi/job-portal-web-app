@@ -49,8 +49,7 @@ public class JobSeekerProfileController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
-            Users user = usersService.getUserByEmail(authentication.getName())
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
+            Users user = usersService.getUserByEmail(authentication.getName());
             Optional<JobSeekerProfile> seekerProfile = jobSeekerProfileService.getJobSeekerProfile(user.getUserId());
 
             if (seekerProfile.isPresent()) {
@@ -73,8 +72,7 @@ public class JobSeekerProfileController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // Unnecessary ->
 
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
-            Users user = usersService.getUserByEmail(authentication.getName()).orElseThrow(() ->
-                    new UsernameNotFoundException("User not found!"));
+            Users user = usersService.getUserByEmail(authentication.getName());
             jobSeekerProfile.setUser(user);
             jobSeekerProfile.setUserAccountId(user.getUserId());
         }
