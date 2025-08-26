@@ -154,7 +154,6 @@ public class JobPostActivityController {
                 }
             }
         }
-        model.addAttribute("jobPost", jobPost);
         model.addAttribute("user", currentProfile);
         return "dashboard";
     }
